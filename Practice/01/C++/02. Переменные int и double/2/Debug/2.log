@@ -1,0 +1,3 @@
+﻿  2.cpp
+C:\Users\user\source\repos\2\2\2.cpp(9,9): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  2.vcxproj -> C:\Users\user\source\repos\2\Debug\2.exe

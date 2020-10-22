@@ -20,10 +20,11 @@ else :
     a1=math.sqrt(((y2-y1)**2)+((x2-x1)**2))
     b1=math.sqrt(((y3-y2)**2)+((x3-x2)**2))
     c1=math.sqrt(((y1-y3)**2)+((x1-x3)**2))
+    print(a1,b1,c1)
     if (a1+b1)<c1:
         print('Введите верные числовые значения,\nсумма двух сторон обязана быть больше третьей')
     else :
-        S=1/2*(math.fabs(x2*y3-x3*y2))
+        S=0.5*(math.fabs(x2*y3-x3*y2))
         print('S  =',int(S))
         
 
