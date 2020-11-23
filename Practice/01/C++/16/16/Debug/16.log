@@ -1,3 +1,0 @@
-﻿  16.cpp
-C:\Users\user\Dropbox\Programming\Practice\01\C++\16\16\16.cpp(9,9): warning C4101: p: неиспользованная локальная переменная
-C:\Users\user\Dropbox\Programming\Practice\01\C++\16\16\16.cpp(11): error C4700: использована неинициализированная локальная переменная "n"
