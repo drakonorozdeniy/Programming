@@ -12,7 +12,7 @@ root = Tk ()
 root.title("Погода")
 root.geometry('134x189+200+100')
 
-one =Label(root,text="Симферополь\n"+a, width=40,  font=("Ubuntu",7,BOLD), bg="#ffba00",  fg="black")
+one =Label(root,text="Симферополь\n"+a, width=40,  font=("Ubuntu",8,BOLD), bg="#ffba00",  fg="black")
 one.pack()
 two=Label(root, text =b+"°C" , width=30,heigh=2 ,font=(" Droid Serif",40),bg="white", fg="black")
 two.pack()
