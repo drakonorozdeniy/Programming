@@ -60,7 +60,7 @@
 **4.** Далее я изучил руководство преподавателя, ознакомился с полезными видео материалами и ссылками.
 
 **5.** Приступил к выполнению основной части лабораторной работы. Для начала скачиваю из репозитория библиотеку cpp_httplib, которая понадобится нам для работы с сетью. Также из того же репозитория скачиваем библиотеку nlohmann:json, которая понадобится для работы с json. Создаю консольное приложение С++, перехожу в папку с главным проектом и создаю папку include, куда распаковываю архивы, которые содержат библиотеки. Теперь подключаю все необходимые библиотеки. 
-```
+```C++
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -70,10 +70,11 @@
 using json = nlohmann::json;
 using namespace std; 
 using namespace httplib;
+// code
 ```
 
 **6.** Теперь создадим функцию типа int  для http://worldtimeapi.org  и string для  получения данных от сервисов http://openweathermap.org/ и http://worldtimeapi.org. Посылаем им get-запросы, возвращаем в переменную. 
-```
+```C++
 int  pover  (int a) {
     Client cli("http://worldtimeapi.org");
     auto res = cli.Get("/api/timezone/Europe/Simferopol");
@@ -107,20 +108,22 @@ string line(string c ) {
         std::cout << "Error code: " << err << std::endl;
     }return c;
 }
+//code
 ```
  **7.** Затем в цикле обноляем кэш. Если в нём содержится информация на 1 час больше, то кэш не обновляем. Если в кэше нет данных, устарел или запрос не делали, то кэш обновляется.
 
-```
+```C++
 if (prevtime / 3600 < (pover(unixtime)/3600)) {
 ...
 }
 else {
     ...
 }
+//code
 ```
 **8.** Выводим на сайт: http://localhost:3000/ После этого программа ищет строки в html-коде и заменяет их на строки, которые нам выдает сервер.
 
-```
+```C++
 void gen_response(const Request& req, Response& res) {
     if (prevtime / 3600 < (pover(unixtime)/3600)) {
         b_line = line(a);
@@ -172,10 +175,11 @@ void gen_response(const Request& req, Response& res) {
         }
     }
 }
+//code 
 ```
 **9.** Для вормирования запросов для "/raw" я использовал теже функции что и для "/"
 Также проверяем кэш в if . Если в кэше нет данных, устарел или запрос не делали, то кэш обновляется и высвечивается информация о погоде на начало следующего часа. Затем кидаем в переменную значение описания и температуры и выводим на сайт: http://localhost:3000/raw
-```
+```C++
 void gen_response2(const Request& req, Response& res) {
     if (prevtime / 3600 < (pover(unixtime) / 3600)) {
         b_line = line(a);
@@ -200,6 +204,7 @@ void gen_response2(const Request& req, Response& res) {
         res.set_content(l, "text/json");
 }
 }
+//code
 ```
 **10.** Создаём сервер. Затем для основного используем первую функцию, для /raw используем вторую функцию. Указываем, на каком хосте работает.Переходим на сайты и проверяем работу сервера.
 <p  align="center"><img  src=./image/№19.png></p>
@@ -209,7 +214,7 @@ void gen_response2(const Request& req, Response& res) {
 -----------------------
 
 **1.** Графический интерфейс я реализовал с помощью Tkinter. В консоле, с помощью команды pip install requests(если при установке Pythona напротив PYTH вы не поставили галочку, то придётся решать эту проблемы собственноручно) устанавливаем модуль requetsts, который нам понадобится для работы с сетью. А для работы с json пользуемся модулем json. Теперь создаём функцию, в которую помещаем подключение к http://localhost:3000/raw, куда мы недавно выводили информацию о температуре и погоде.
-```
+```Python
 import requests 
 from tkinter import *
 import json
@@ -218,9 +223,10 @@ r = requests.get('http://localhost:3000/raw')
 f=r.json()
 a=f[0]["description"].encode('l1').decode()
 b=str(f[0]["temp"])
+#code
 ```
 **2.** Затем  класс виджетов Label для отображения текста, задаём цвет, высоту, ширину. Область, которую мы обозначили в root.geometry, мы разделили на три части. Также задаём положение каждому Label.
-```
+```Python 
 root = Tk ()
 root.title("Погода")
 root.geometry('134x189+200+100')
@@ -234,6 +240,7 @@ three=Label(root,text = "" , width=40, heigh=2, bg="#ffba00", )
 three.pack()
 
 root.mainloop()
+#code 
 ```
 **3.** Производим запуск  клиентского приложения.
 <p  align="center"><img  src=./image/№12.png></p>
