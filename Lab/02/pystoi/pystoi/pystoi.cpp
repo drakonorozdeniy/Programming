@@ -11,7 +11,7 @@ void gen_response(const Request& req, Response& res) {
     // Создаём клиент и привязываем к домену. Туда пойдут наши запросы
     Client cli("http://webhook.site");
     // Отправляем post в теле которого будет текст {"Hello": "world"}
-    auto all = cli.Post("/853fdcd3-ffb8-473a-8a4b-659478b36bfc", u8R"({"Hello": "world"})", "text/json");
+    auto all = cli.Post("/853fdcd3-ffb8-473a-8a4b-659478b36bfc", R"({"Hello": "world"})", "text/json");
     // res преобразуется в true, если запрос-ответ прошли без ошибок
     if (all) {
         // Проверяем статус ответа, т.к. может быть 404 и другие

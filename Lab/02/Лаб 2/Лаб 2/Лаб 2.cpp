@@ -9,10 +9,10 @@ using namespace httplib;
 using json = nlohmann::json;
 
 
-// В этой функции формируем ответ сервера на запрос
+
 
 void gen_response(const Request& req, Response& res) {
-    // Выводим на экран тело запроса
+
     std::cout << req.body.c_str();
     json p;
     string shablonstr, webliststr, end;
@@ -78,7 +78,7 @@ void gen_response(const Request& req, Response& res) {
 }
 int main() {
     Server svr;        
-    svr.Post("/webhooks", gen_response);           // Вызвать функцию gen_response на post запрос
-    std::cout << "Start server... OK\n"; // cout использовать нельзя
-    svr.listen("localhost", 1234);         // Запускаем сервер на localhost и порту 1234
+    svr.Post("/webhooks", gen_response);          
+    std::cout << "Start server... OK\n"; 
+    svr.listen("localhost", 1234);        
 }
