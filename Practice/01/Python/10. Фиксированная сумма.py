@@ -7,3 +7,4 @@ elif l2<=o<=r2:
     print(5,o)
 else :
     print('-1')
+
