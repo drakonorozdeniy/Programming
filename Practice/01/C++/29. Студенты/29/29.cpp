@@ -67,7 +67,7 @@ bool operator > (Student& a, Student& b) {
 
 int main() {
     //создание вектора из 10 структур типа Student
-    vector<Student> AllStudents = {
+    vector<Student> ALL_STUDENT = {
         Student{"Akihito K", 5, {{"Math", 5}, {"Phys", 4}, {"Hist", 3}, {"Prog", 5}}},
         Student{"Pipez   L", 2, {{"Math", 5}, {"Phys", 5}, {"Hist", 5}, {"Prog", 3}}},
         Student{"Tores   M", 5, {{"Math", 4}, {"Phys", 2}, {"Hist", 2}, {"Prog", 5}}},
@@ -82,18 +82,18 @@ int main() {
 
     
 
-    vector<Student> MARK_TWO;
+    vector<Student> BOY_LOVES_TWO;
     for (int i = 0; i < 10; i++) {
-        if (AllStudents[i].exams.at("Math") == 2 or
-            AllStudents[i].exams.at("Phys") == 2 or
-            AllStudents[i].exams.at("Hist") == 2 or
-            AllStudents[i].exams.at("Prog") == 2) {
-            MARK_TWO.push_back(AllStudents[i]);
+        if (ALL_STUDENT[i].exams.at("Math") == 2 or
+            ALL_STUDENT[i].exams.at("Phys") == 2 or
+            ALL_STUDENT[i].exams.at("Hist") == 2 or
+            ALL_STUDENT[i].exams.at("Prog") == 2) {
+            BOY_LOVES_TWO.push_back(ALL_STUDENT[i]);
         }
     }
 
-    if (!MARK_TWO.empty()) {
-        cout << BozoSort(MARK_TWO, MARK_TWO.size());
+    if (!BOY_LOVES_TWO.empty()) {
+        cout << BozoSort(BOY_LOVES_TWO, BOY_LOVES_TWO.size());
     }
     else {
         cout << "Not found\n";
@@ -101,8 +101,8 @@ int main() {
     }
 
     cout << endl << "Expulsion\n\n";
-    int i = rand() % MARK_TWO.size();
-    cout << MARK_TWO[i];
+    int i = rand() % BOY_LOVES_TWO.size();
+    cout << BOY_LOVES_TWO[i];
 }
 
 
