@@ -66,7 +66,6 @@ bool operator > (Student& a, Student& b) {
 }
 
 int main() {
-    //создание вектора из 10 структур типа Student
     vector<Student> ALL_STUDENT = {
         Student{"Akihito K", 5, {{"Math", 5}, {"Phys", 4}, {"Hist", 3}, {"Prog", 5}}},
         Student{"Pipez   L", 2, {{"Math", 5}, {"Phys", 5}, {"Hist", 5}, {"Prog", 3}}},

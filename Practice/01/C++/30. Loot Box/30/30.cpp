@@ -190,8 +190,7 @@ ostream& operator << (ostream& out, LootBox all) {
 
 int main() {
     srand(time(0));
-    setlocale(LC_ALL, "russian");
-
+    setlocale(0,"");
     while (true) {
         string answer;
         cout << "Открыть лутбокс? Yes/No\n";
