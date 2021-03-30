@@ -28,6 +28,4 @@ def to_print (arr,size):
 
 arr=create(size,first,step)
 sort(arr,size)
-to_print(arr,size) 
-
-
+to_print(arr,size)
