@@ -1,0 +1,13 @@
+release/fyko2.o
+release/main.o
+release/mainwindow.o
+release/mathemati.o
+release/physics.o
+release/qcustomplot.o
+release/resistance2.o
+release/moc_fyko2.o
+release/moc_mainwindow.o
+release/moc_mathemati.o
+release/moc_physics.o
+release/moc_qcustomplot.o
+release/moc_resistance2.o
