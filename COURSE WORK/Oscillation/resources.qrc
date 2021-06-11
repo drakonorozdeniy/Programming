@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/resourses">
-        <file>images/pendulum.png</file>
-        <file>images/spider_man5.png</file>
-        <file>images/wave.png</file>
-        <file>images/exit.png</file>
-    </qresource>
-</RCC>
